@@ -12,7 +12,15 @@ describe 'a user visits the homepage' do
 
       expect(current_path).to eq("/search")
 
-      exect(page).to have_css(".station", count: 10)
+      expect(page).to have_css(".station", count: 10)
+
+      expect(page).to have_content("ELEC")
+      expect(page).to have_content("LPG")
+      expect(page).to_not have_content("LNG")
+      expect(page).to_not have_content("E85")
+      expect(page).to_not have_content("CNG")
+      expect(page).to_not have_content("BD")
+      expect(page).to_not have_content("all")
 
       within(first(".station")) do
         expect(page).to have_css(".name")
