@@ -6,7 +6,7 @@ class Station
     @name = response[:station_name]
     @address = response[:street_address]
     @fuel_type = response[:fuel_type_code]
-    @distance = "Within 6 Miles"
+    @distance = response[:distance]
     @access_times = response[:access_days_time]
   end
 end
