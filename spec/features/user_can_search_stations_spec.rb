@@ -12,7 +12,7 @@ describe 'a user visits the homepage' do
 
       expect(current_path).to eq("/search")
 
-      expect(page).to have_css(".station", count: 10)
+      expect(page).to have_css(".station", maximum: 10)
 
       expect(page).to have_content("ELEC")
       expect(page).to have_content("LPG")
